@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "buildTask",
+            "command": "gfortran.exe",
+            "args": [
+                "-g",
+                "src\\dasum.f",
+                "src\\dscal.f",
+                "src\\dcopy.f",
+                "src\\daxpy.f",
+
+                "src\\test.f",
+
+                "src\\subopt.f",
+                "src\\evalf.f",
+                "src\\sortd.f",
+                "src\\partx.f",
+                "src\\simplx.f",
+                "src\\newpt.f",
+                "src\\dist.f",
+                
+                "src\\start.f",
+                "src\\order.f",
+                "src\\calcc.f",
+                "src\\setstp.f",
+
+                "src\\subplx.f",
+                "hello.f",
+                "-o",
+                "${workspaceRoot}\\hello.exe"
+            ]
+        }
+    ]
+}
