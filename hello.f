@@ -12,17 +12,15 @@
             end
         
         program hello
-            integer n, maxnfe,nfe,iwork(2*2),iflag
-            double precision tol,scale(2),x(2),fx,work(17)
+            integer n
+            parameter( n = 18)
+            integer maxnfe,nfe,iwork(2*n),iflag
+            double precision tol,scale(n),x(n),fx,work(n*(n+6)+1)
             external f
-            
-            n = 2
-            ! call alloca_fortran(iwork, n, TYPE_INT) ! Allocate 20 integers for a
-
-            ! call alloca_fortran(b, 14, TYPE_DBL) ! Allocate 14 doubles for b
-
+                        
             tol = 0.00000000000001
-            x = (/11 , -33/)
+            x = (/1,-1,2,-2,3,3,-1,-15,70,1,-1,2,-2,
+     *   3,3,-1,-15,70/)
             scale = -1
             maxnfe = 10000
             call subplx(f,n,tol,maxnfe,scale,x,fx,nfe,work,iwork,iflag)
